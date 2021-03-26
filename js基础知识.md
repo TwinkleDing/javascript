@@ -31,4 +31,22 @@ this的只想完全取决于函数调用的位置
 
 作用域链：在当前作用域没有定义的变量，在调用时会一层一层向上寻找，直到找到位置，找到最外层找不到就报错，
 
-## 
+## 构造函数new操作符做了什么
+一共经历了4个阶段  
+````javascript
+1. 创建一个空对象
+var obj = new Object() 
+2. 设置原型链
+obj.__proto__ = Func.prototype
+3. 让Func的this指向obj，并执行Func的函数体
+var result = Func.call(obj)
+4. 判断Func的返回类型，如果是值类型，返回obj，如果是引用类型，就返回引用类型的这个对象
+if(typeof(result) === 'object'){
+  func = result
+} else {
+  func = obj
+}
+````
+
+## 原型和原型链
+
