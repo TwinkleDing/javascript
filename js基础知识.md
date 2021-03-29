@@ -33,7 +33,7 @@ this的只想完全取决于函数调用的位置
 
 ## 构造函数new操作符做了什么
 一共经历了4个阶段  
-````javascript
+````js
 1. 创建一个空对象
 var obj = new Object() 
 2. 设置原型链
@@ -49,4 +49,38 @@ if(typeof(result) === 'object'){
 ````
 
 ## 原型和原型链
+### prototype
+prototype是一个属性，每个函数都有一个这样的属性，它默认指向一个空对象，prototype中包含函数实例共享的方法和属性，即实例一旦创建，就会自动引用prototype对象的属性和方法。
+### 构造器constructor
+原型对象中还有一个属性constructor，其保存了指向该函数的一个引用
 
+### 隐式原型__protot__
+每个函数都有一个prototype，即显式原型。  
+每个实例对象都有__oroto__。即隐式原型。  
+**对象的隐式原型的值指向对应构造函数的显示原型的值**
+````js
+function Star(uname, age) { // 函数
+    this.uname = uname;
+    this.age = age;
+    this.sing = function() {
+      console.log('I can sing！');
+    }
+  }
+var ldh = new Star('刘德华', 18);  // 实例
+console.log(ldh.__proto__ === Star.prototype); // true  说明对象的隐式原型的值指向对应构造函数的显示原型的值
+console.log(Star.prototype.constructor);  
+console.log(Star.prototype.constructor === Star); // 结果为 true，说明Star原型对象的constructor指向Star本身
+console.log(ldh.constructor);
+console.log(ldh.constructor === Star); // 结果为true，说明Star的实例对象的constructor也指向构造函数Star本身
+````
+
+### 原型链
+原型链就是根据prototype和__proto__连接起来的一个原型链条。  
+**通过原型链访问一个对象的属性的方法：**  
+先在自身属性中查找，找到则返回，如果没有，再沿着__proto__这个链向上查找，找到则返回，没有则继续沿着__proto__这个链向上查找，如果最终找到Object的原型对象还是没有找到，则返回undefined。
+
+## 原型的继承
+
+## 什么是面向对象，类和实例
+
+## class类与继承
