@@ -86,11 +86,25 @@ MVVM不同于MVC的层层控制，去除了C的控制层，使用VM代替，VM�
 2. 组件内的钩子函数
 3. 单独路由独享组件
 
-## params传参和query传参区别
+### 路由懒加载
+
+1. vue异步组件技术
+2. 使用component直接调用import，不在文件头部定义
+3. webpack配置
+
+### params传参和query传参区别
 
 1. params传参必须要用路由的name，传参不可见，url地址不显示，
 2. query传参需要用路由的path，传参可见，url地址会显示，
 
 ## vuex
+
+vue的黄台管理工具，在main中引入store，然后注入。单页面应用中组件之间的状态，
+
+**state** 存放基本数据  
+**getters**  读取state的值，类似于computed，具有缓存   
+**mutations**  修改state里面的值，所有修改state的操作必须在这里的方法里完成，同步的  
+**actions**  异步的，一般是调用ajax，然后掉哦那个mutations的方法以修改state的值  
+**modules**  模块化vuex
 
 ## vue与其他框架的对比
