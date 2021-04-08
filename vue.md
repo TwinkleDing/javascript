@@ -55,6 +55,18 @@ v-model;v-if;v-show;v-html;v-bind;v-on;v-for
 2. 具名插槽：插槽添加name属性，使插槽具有唯一性，
 3. 带参数的插槽：插槽定义时，绑定数据，使使用插槽时可以使用绑定在插槽上的数据
 
+## watch和computed的区别
+
+### computed
+1. 当一个属性收到多个属性影响的时候需要用到computed
+2. data定义的话不能在computed定义
+3. computed具有缓存
+
+### watch
+1. 当一条数据影响多条数据的时候使用watch
+2. 监听复杂类型时，可使用deep进行深度监听
+3. 需要立即执行是，使用immediate
+
 ## MVVM是什么
 
 M:  model
@@ -106,5 +118,15 @@ vue的黄台管理工具，在main中引入store，然后注入。单页面应�
 **mutations**  修改state里面的值，所有修改state的操作必须在这里的方法里完成，同步的  
 **actions**  异步的，一般是调用ajax，然后掉哦那个mutations的方法以修改state的值  
 **modules**  模块化vuex
+
+## vue的优点
+
+1. 轻量级框架，只关注视图层，是一个构建数据的视图集合
+2. 简单易学，使用html+js+css
+3. 双向数据绑定，保留了angular的优点，在数据操作方面更方便
+4. 组件化开发，保留了react的优点，实现了html的封装和重用，
+5. 视图、数据、结构分离，使数据的更改更为简单，不需要进行逻辑代码的修改，只要操作数据即可完成
+6. 虚拟dom，真实的dom操作是非常消耗性能的，不再使用原生dom操作节点，极大的解放了dom操作，
+7. 运行速度更快，
 
 ## vue与其他框架的对比
