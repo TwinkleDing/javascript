@@ -109,7 +109,7 @@ function identity<T>(arg: T): T {
 ## type 和 interface
 
 -   type 类型别名；
-    1. 可以生命任何类型
+    1. 可以声明任何类型
     2. 定义俩个同名的 type 会报异常
     3. type 可以使用交叉类型进行合并
 -   interface 接口，主要用于类型检查；
