@@ -169,23 +169,23 @@ mixin 混入的 data 及 methods 要早于 mixin 的组件同名的 data 属性�
 ## vue 中的修饰符
 
 1. 表单修饰符
-    1. lazy：填完信息，光标离开标签的时候，才会将值赋予 value。也就是在 change 事件之后再进行信息同步
-    2. number：自动将用户输入值转化为数值类型，但如果这个值无法被 parseFloat 解析，则会返回原来的值
-    3. tirm：自动过滤用户若输入的首尾空格，
+   1. lazy：填完信息，光标离开标签的时候，才会将值赋予 value。也就是在 change 事件之后再进行信息同步
+   2. number：自动将用户输入值转化为数值类型，但如果这个值无法被 parseFloat 解析，则会返回原来的值
+   3. tirm：自动过滤用户若输入的首尾空格，
 2. 事件修饰符
-    1. stop：阻止事件冒泡，相当于调用 event.stopPropagation
-    2. prevent：组织事件的默认行为，相当于调用 event.preventDefault
-    3. self：只当在 event.target 是当前元素自身时触发处理函数
-    4. once：绑定了的事件只能出发第一次
-    5. native：让组件变成像 html 内置标签那样监听根元素的原生事件，否则组件撒谎给你使用 v-on 只会监听自定义事件
+   1. stop：阻止事件冒泡，相当于调用 event.stopPropagation
+   2. prevent：组织事件的默认行为，相当于调用 event.preventDefault
+   3. self：只当在 event.target 是当前元素自身时触发处理函数
+   4. once：绑定了的事件只能出发第一次
+   5. native：让组件变成像 html 内置标签那样监听根元素的原生事件，否则组件撒谎给你使用 v-on 只会监听自定义事件
 3. 鼠标按键修饰符
    1.left：鼠标左键点击
    2.right：右键点击
    3.middle
 4. 键盘修饰符
-    1. 普通键（enter、tab、delete、sapce 等）
-    2. 系统装饰键（ctrl、alt、meta、shift）
-    3. keyup.enter：回车事件
+   1. 普通键（enter、tab、delete、sapce 等）
+   2. 系统装饰键（ctrl、alt、meta、shift）
+   3. keyup.enter：回车事件
 
 ## 对 spa 应用的理解
 

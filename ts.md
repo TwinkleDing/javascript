@@ -33,7 +33,7 @@ console.log(colorName);  // 显示'Green'因为上面代码里它的值是2
 
 ```ts
 function warnUser(): void {
-	console.log("This is my warning message");
+  console.log("This is my warning message");
 }
 ```
 
@@ -69,9 +69,9 @@ let strLength: number = (someValue as string).length;
 
 ```ts
 interface Label {
-	lable: string;
-	color?: string; // 可选属性。有时使用必须要判断非空，不然会报错
-	readonly x: number; //只读属性
+  lable: string;
+  color?: string; // 可选属性。有时使用必须要判断非空，不然会报错
+  readonly x: number; //只读属性
 }
 ```
 
@@ -79,22 +79,25 @@ interface Label {
 
 ```ts
 interface SearchFunc {
-	(source: string, subString: string): boolean;
+  (source: string, subString: string): boolean;
 }
 let mySearch: SearchFunc;
 // 对于函数类型的类型检查来说，函数的参数名不需要与接口里定义的名字相匹配。
 // 同样 使用了函数类型的函数的变量不需要再次定义类型
 mySearch = function (src, str) {
-	let result = src.search(str);
-	return result > -1;
+  let result = src.search(str);
+  return result > -1;
 };
 ```
 
 ## 函数
 
 ```ts
-let myAdd: (x: number, y: number) => number = function (x: number, y: number): number {
-	return x + y;
+let myAdd: (x: number, y: number) => number = function (
+  x: number,
+  y: number
+): number {
+  return x + y;
 };
 ```
 
@@ -102,17 +105,17 @@ let myAdd: (x: number, y: number) => number = function (x: number, y: number): n
 
 ```ts
 function identity<T>(arg: T): T {
-	return arg;
+  return arg;
 }
 ```
 
 ## type 和 interface
 
--   type 类型别名；
-    1. 可以声明任何类型
-    2. 定义俩个同名的 type 会报异常
-    3. type 可以使用交叉类型进行合并
--   interface 接口，主要用于类型检查；
-    1. 只能定义对象类型
-    2. 定义俩个同名的会合并
-    3. interface 可以使用 extends，implements 进行扩展
+- type 类型别名；
+  1. 可以声明任何类型
+  2. 定义俩个同名的 type 会报异常
+  3. type 可以使用交叉类型进行合并
+- interface 接口，主要用于类型检查；
+  1. 只能定义对象类型
+  2. 定义俩个同名的会合并
+  3. interface 可以使用 extends，implements 进行扩展
